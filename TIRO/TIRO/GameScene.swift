@@ -11,6 +11,14 @@
 import SpriteKit
 import GameplayKit
 
+struct PhysicsCategory {
+    static let None: UInt32 = 0
+    static let Ball: UInt32 = 0b1 // 1
+    static let Platform: UInt32 = 0b10 // 2
+    static let Edge: UInt32 = 0b100 // 4
+    static let Goal: UInt32 = 0b1000 // 8
+}
+
 class GameScene: SKScene {
     
     
