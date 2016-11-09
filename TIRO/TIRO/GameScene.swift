@@ -11,6 +11,14 @@
 import SpriteKit
 import GameplayKit
 
+protocol InteractiveNode {
+    func interact()
+}
+
+protocol EventListenerNode {
+    func didMoveToScene()
+}
+
 struct PhysicsCategory {
     static let None: UInt32 = 0
     static let Ball: UInt32 = 0b1 // 1
@@ -19,9 +27,9 @@ struct PhysicsCategory {
     static let Goal: UInt32 = 0b1000 // 8
 }
 
-class GameScene: SKScene {
+class GameScene: SKScene,  SKPhysicsContactDelegate {
     
-    
+    var exitNode: ExitNode!
     var gravityForce:CGFloat = 9.8
     
     var lastUpdateTime: TimeInterval = 0
@@ -36,6 +44,13 @@ class GameScene: SKScene {
     override func didMove(to view: SKView) {
         self.physicsWorld.gravity = CGVector.zero
         
+        exitNode = childNode(withName: "ExitNode") as! ExitNode
+        
+        enumerateChildNodes(withName: "//*", using: { node, _ in
+            if let eventListenerNode = node as? EventListenerNode {
+                eventListenerNode.didMoveToScene()
+            }
+        })
         pauseNode.attach(scene: self)
         
         pause()
