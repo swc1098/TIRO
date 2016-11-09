@@ -29,6 +29,9 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            self.becomeFirstResponder()
+            
+            MotionMonitor.shareMotionMonitor.startUpdates()
         }
     }
 
@@ -43,7 +46,11 @@ class GameViewController: UIViewController {
             return .all
         }
     }
-
+    
+    override var canBecomeFirstResponder: Bool{
+        return true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Release any cached data, images, etc that aren't in use.

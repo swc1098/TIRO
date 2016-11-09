@@ -30,6 +30,7 @@
 		3FA63A331DD390BA00BBEFE9 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A321DD390BA00BBEFE9 /* bg.png */; };
 		3FA63A381DD395A600BBEFE9 /* wood_horiz1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A371DD395A600BBEFE9 /* wood_horiz1.png */; };
 		3FA63A3C1DD396DF00BBEFE9 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A3B1DD396DF00BBEFE9 /* circle.png */; };
+		3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		3FA63A321DD390BA00BBEFE9 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		3FA63A371DD395A600BBEFE9 /* wood_horiz1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_horiz1.png; sourceTree = "<group>"; };
 		3FA63A3B1DD396DF00BBEFE9 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				3FA63A021DD38EB700BBEFE9 /* Actions.sks */,
 				3FA63A041DD38EB700BBEFE9 /* GameScene.swift */,
 				3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */,
+				3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */,
 				3FA63A081DD38EB700BBEFE9 /* Main.storyboard */,
 				3FA63A0D1DD38EB700BBEFE9 /* LaunchScreen.storyboard */,
 				3FA63A0B1DD38EB700BBEFE9 /* Assets.xcassets */,
@@ -224,6 +227,7 @@
 				3FA63A291DD38F8F00BBEFE9 /* Int+Extensions.swift in Sources */,
 				3FA63A2D1DD38F8F00BBEFE9 /* SKNode+Extensions.swift in Sources */,
 				3FA63A2E1DD38F8F00BBEFE9 /* SKTAudio.swift in Sources */,
+				3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */,
 				3FA63A261DD38F8F00BBEFE9 /* CGFloat+Extensions.swift in Sources */,
 				3FA63A311DD38F8F00BBEFE9 /* Vector3.swift in Sources */,
 				3FA639FF1DD38EB700BBEFE9 /* AppDelegate.swift in Sources */,
@@ -388,6 +392,7 @@
 				3FA63A151DD38EB700BBEFE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
