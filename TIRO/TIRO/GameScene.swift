@@ -13,16 +13,56 @@ import GameplayKit
 
 class GameScene: SKScene {
     
+    
     var gravityForce:CGFloat = 9.8
     
+    var lastUpdateTime: TimeInterval = 0
+    var dt: TimeInterval = 0
+    let pauseNode = PauseSprite()
+    var gameIsPaused:Bool = true {
+        didSet {
+            gameIsPaused ? pause() : unPause()
+        }
+    }
     
     override func didMove(to view: SKView) {
+        self.physicsWorld.gravity = CGVector.zero
         
+        pauseNode.attach(scene: self)
+        
+        pause()
+        
+        run(SKAction.afterDelay(0.5, runBlock: {}))
     }
     
     
+    //MARK - Pause -
+    func pause() {
+        run(
+            SKAction.sequence([SKAction.run {
+                self.pauseNode.paused()
+                }, SKAction.run {
+                    self.pauseNode.paused()
+                    self.physicsWorld.speed = 0.0
+                    self.view?.isPaused = true
+                    MotionMonitor.shareMotionMonitor.stopUpdates()
+                }])
+        )
+    }
+    
+    func unPause() {
+        pauseNode.unPaused()
+        self.view?.isPaused = false
+        physicsWorld.speed = 1.0
+        lastUpdateTime = 0
+        MotionMonitor.shareMotionMonitor.startUpdates()
+    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        if(gameIsPaused){
+            gameIsPaused = false
+            return
+        }
     }
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -30,6 +30,7 @@
 		3FA63A331DD390BA00BBEFE9 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A321DD390BA00BBEFE9 /* bg.png */; };
 		3FA63A381DD395A600BBEFE9 /* wood_horiz1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A371DD395A600BBEFE9 /* wood_horiz1.png */; };
 		3FA63A3C1DD396DF00BBEFE9 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A3B1DD396DF00BBEFE9 /* circle.png */; };
+		3FAF1A931DD3C00F003288C3 /* PauseSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF1A921DD3C00F003288C3 /* PauseSprite.swift */; };
 		3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		3FA63A321DD390BA00BBEFE9 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
 		3FA63A371DD395A600BBEFE9 /* wood_horiz1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_horiz1.png; sourceTree = "<group>"; };
 		3FA63A3B1DD396DF00BBEFE9 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		3FAF1A921DD3C00F003288C3 /* PauseSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PauseSprite.swift; path = SKTUtils/PauseSprite.swift; sourceTree = "<group>"; };
 		3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			children = (
 				3FA63A191DD38F8F00BBEFE9 /* SKTUtils */,
 				3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */,
+				3FAF1A921DD3C00F003288C3 /* PauseSprite.swift */,
 				3FA63A001DD38EB700BBEFE9 /* GameScene.sks */,
 				3FA63A021DD38EB700BBEFE9 /* Actions.sks */,
 				3FA63A041DD38EB700BBEFE9 /* GameScene.swift */,
@@ -226,6 +229,7 @@
 				3FA63A071DD38EB700BBEFE9 /* GameViewController.swift in Sources */,
 				3FA63A291DD38F8F00BBEFE9 /* Int+Extensions.swift in Sources */,
 				3FA63A2D1DD38F8F00BBEFE9 /* SKNode+Extensions.swift in Sources */,
+				3FAF1A931DD3C00F003288C3 /* PauseSprite.swift in Sources */,
 				3FA63A2E1DD38F8F00BBEFE9 /* SKTAudio.swift in Sources */,
 				3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */,
 				3FA63A261DD38F8F00BBEFE9 /* CGFloat+Extensions.swift in Sources */,

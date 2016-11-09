@@ -16,27 +16,50 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
         
         if let view = self.view as! SKView? {
-            // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "GameScene") {
-                // Set the scale mode to scale to fit the window
-                scene.scaleMode = .aspectFill
-                
-                // Present the scene
-                view.presentScene(scene)
-            }
+            
+            loadLevel()
+            
+            
+            setNotifcations()
             
             view.ignoresSiblingOrder = true
             
             view.showsFPS = true
             view.showsNodeCount = true
             self.becomeFirstResponder()
-            
-            MotionMonitor.shareMotionMonitor.startUpdates()
+        }
+    }
+    
+    func setNotifcations(){
+        NotificationCenter.default.addObserver(self, selector: #selector(didActive), name: NSNotification.Name.UIApplicationDidBecomeActive, object: nil)
+    }
+    
+    func willResign(){
+        //gameScene?.gameIsPaused = true
+    }
+    
+    func didActive(){
+        if let view = self.view as! SKView? {
+           let scene = view.scene as? GameScene
+           scene?.gameIsPaused = true
         }
     }
 
     override var shouldAutorotate: Bool {
-        return true
+        return false
+    }
+    
+    func loadLevel() {
+        // Load the SKScene from 'GameScene.sks'
+        if let scene = SKScene(fileNamed: "GameScene") {
+            // Set the scale mode to scale to fit the window
+            scene.scaleMode = .aspectFill
+            
+            // Present the scene
+            if let view = self.view as! SKView? {
+                view.presentScene(scene)
+            }
+        }
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
