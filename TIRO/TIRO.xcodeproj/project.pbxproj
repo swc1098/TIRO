@@ -14,6 +14,7 @@
 		3F0D77781DD3E14A0041EF21 /* Lose.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D77771DD3E14A0041EF21 /* Lose.sks */; };
 		3F0D777A1DD3E1960041EF21 /* otherbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D77791DD3E1960041EF21 /* otherbg.jpg */; };
 		3F0D777E1DD3E2FA0041EF21 /* Win.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D777D1DD3E2FA0041EF21 /* Win.sks */; };
+		3F0D77801DD3E5330041EF21 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */; };
 		3FA639FF1DD38EB700BBEFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */; };
 		3FA63A011DD38EB700BBEFE9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A001DD38EB700BBEFE9 /* GameScene.sks */; };
 		3FA63A031DD38EB700BBEFE9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A021DD38EB700BBEFE9 /* Actions.sks */; };
@@ -49,6 +50,7 @@
 		3F0D77771DD3E14A0041EF21 /* Lose.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Lose.sks; sourceTree = "<group>"; };
 		3F0D77791DD3E1960041EF21 /* otherbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = otherbg.jpg; sourceTree = "<group>"; };
 		3F0D777D1DD3E2FA0041EF21 /* Win.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Win.sks; sourceTree = "<group>"; };
+		3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
 		3FA639FB1DD38EB700BBEFE9 /* TIRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA63A001DD38EB700BBEFE9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */,
 				3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */,
 				3F0D77751DD3DF270041EF21 /* ExitNode.swift */,
+				3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */,
 				3F0D776F1DD3D6B20041EF21 /* ExitFx.sks */,
 				3F0D77701DD3D6B20041EF21 /* spark.png */,
 				3FA63A081DD38EB700BBEFE9 /* Main.storyboard */,
@@ -247,6 +250,7 @@
 			files = (
 				3FA63A051DD38EB700BBEFE9 /* GameScene.swift in Sources */,
 				3FA63A271DD38F8F00BBEFE9 /* CGPoint+Extensions.swift in Sources */,
+				3F0D77801DD3E5330041EF21 /* PlayerNode.swift in Sources */,
 				3FA63A301DD38F8F00BBEFE9 /* SKTTimingFunctions.swift in Sources */,
 				3FA63A2F1DD38F8F00BBEFE9 /* SKTEffects.swift in Sources */,
 				3FA63A2B1DD38F8F00BBEFE9 /* SKAction+SpecialEffects.swift in Sources */,

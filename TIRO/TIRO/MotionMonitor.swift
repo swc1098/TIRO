@@ -38,8 +38,8 @@ class MotionMonitor{
                 
                 self.transform = CGAffineTransform(rotationAngle:CGFloat(self.rotation))
                 
-                print("self.rotation = \(self.rotation)")
-                print("self.gravityVectorNormalized = \(self.gravityVectorNormalized)")
+                //print("self.rotation = \(self.rotation)")
+                //print("self.gravityVectorNormalized = \(self.gravityVectorNormalized)")
                 
             }
         } else{

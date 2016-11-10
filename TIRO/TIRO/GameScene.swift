@@ -30,8 +30,13 @@ struct PhysicsCategory {
 class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     var exitNode: ExitNode!
-    var gravityForce:CGFloat = 9.8
+    var playerNode: PlayerNode!
     
+    var firstUnPause = true
+    
+    var playable = true
+    
+    var gravityForce:CGFloat = 5
     var lastUpdateTime: TimeInterval = 0
     var dt: TimeInterval = 0
     let pauseNode = PauseSprite()
@@ -42,9 +47,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
+        firstUnPause = true
         self.physicsWorld.gravity = CGVector.zero
+        //physicsBody!.categoryBitMask = PhysicsCategory.Edge
         
-        exitNode = childNode(withName: "ExitNode") as! ExitNode
+        exitNode = childNode(withName: "exit") as! ExitNode
+        playerNode = childNode(withName:"mainball") as! PlayerNode
         
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
@@ -53,9 +61,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         })
         pauseNode.attach(scene: self)
         
+        
         pause()
         
-        run(SKAction.afterDelay(0.5, runBlock: {}))
+
     }
     
     
@@ -79,14 +88,59 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         physicsWorld.speed = 1.0
         lastUpdateTime = 0
         MotionMonitor.shareMotionMonitor.startUpdates()
+        
+        if(firstUnPause){
+            playerNode.position = CGPoint(x:30,y:200)
+            playerNode.physicsBody?.velocity = CGVector.zero
+            playerNode.physicsBody?.angularVelocity = 0
+            firstUnPause = false
+        }
     }
-
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if !playable {
+            return
+        }
+        let collision = contact.bodyA.categoryBitMask
+            | contact.bodyB.categoryBitMask
+        if collision == PhysicsCategory.Ball | PhysicsCategory.Goal {
+            print("SUCCESS")
+            win()
+        } else if collision == PhysicsCategory.Ball
+            | PhysicsCategory.Edge {
+            print("FAIL")
+            playable = false
+            lose()
+        }
+    }
+    
+    func lose() {
+        perform(#selector(loseGame), with: nil, afterDelay: 5)
+    }
+    func loseGame() {
+        let scene = GameScene(fileNamed:"Lose")
+        scene!.scaleMode = scaleMode
+        view!.presentScene(scene)
+    }
+    
+    func win() {
+        playable = false
+        perform(#selector(winGame), with: nil,
+                afterDelay: 3)
+    }
+    func winGame() {
+        let scene = GameScene(fileNamed:"Win")
+        scene!.scaleMode = scaleMode
+        view!.presentScene(scene)
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(gameIsPaused){
             gameIsPaused = false
             return
         }
     }
+
     
     override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         
@@ -102,6 +156,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     
     override func update(_ currentTime: TimeInterval) {
+        
+        if(!gameIsPaused){
         self.physicsWorld.gravity = MotionMonitor.shareMotionMonitor.gravityVectorNormalized * gravityForce
+        
+        //print(playerNode.position)
+        }
     }
 }
