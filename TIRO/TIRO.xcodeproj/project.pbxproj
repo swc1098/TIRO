@@ -91,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1A28A01DD3FB8800960E42 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				3FA63A001DD38EB700BBEFE9 /* GameScene.sks */,
+				3F0D77771DD3E14A0041EF21 /* Lose.sks */,
+				3F0D777D1DD3E2FA0041EF21 /* Win.sks */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 		3FA639F21DD38EB700BBEFE9 = {
 			isa = PBXGroup;
 			children = (
@@ -113,9 +123,7 @@
 				3FA63A191DD38F8F00BBEFE9 /* SKTUtils */,
 				3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */,
 				3FAF1A921DD3C00F003288C3 /* PauseSprite.swift */,
-				3FA63A001DD38EB700BBEFE9 /* GameScene.sks */,
-				3F0D77771DD3E14A0041EF21 /* Lose.sks */,
-				3F0D777D1DD3E2FA0041EF21 /* Win.sks */,
+				3F1A28A01DD3FB8800960E42 /* Scenes */,
 				3FA63A021DD38EB700BBEFE9 /* Actions.sks */,
 				3FA63A041DD38EB700BBEFE9 /* GameScene.swift */,
 				3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */,

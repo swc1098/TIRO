@@ -14,8 +14,8 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
         print("player added to scene")
         
         self.physicsBody!.categoryBitMask = PhysicsCategory.Ball
-        self.physicsBody!.collisionBitMask = PhysicsCategory.Goal
-            | PhysicsCategory.Edge
+        self.physicsBody!.collisionBitMask = PhysicsCategory.Platform
+            | PhysicsCategory.Edge | PhysicsCategory.Goal
         
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Goal
         | PhysicsCategory.Edge

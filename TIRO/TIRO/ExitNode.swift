@@ -15,10 +15,12 @@ class ExitNode: SKSpriteNode, EventListenerNode {
         print("exit added to scene")
         
         // 97 124
-        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:97, height: 124))
-        physicsBody!.isDynamic = false
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width:97, height: 124))
+        self.physicsBody!.isDynamic = false
         
-        physicsBody!.categoryBitMask = PhysicsCategory.Goal
-        physicsBody!.collisionBitMask = PhysicsCategory.Ball
+        self.physicsBody!.categoryBitMask = PhysicsCategory.Goal
+        self.physicsBody!.collisionBitMask = PhysicsCategory.None | PhysicsCategory.Ball
+        self.physicsBody!.contactTestBitMask = PhysicsCategory.Ball
+        
     }
 }

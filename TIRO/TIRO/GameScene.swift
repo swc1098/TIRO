@@ -11,10 +11,6 @@
 import SpriteKit
 import GameplayKit
 
-protocol InteractiveNode {
-    func interact()
-}
-
 protocol EventListenerNode {
     func didMoveToScene()
 }
@@ -28,7 +24,6 @@ struct PhysicsCategory {
 }
 
 class GameScene: SKScene,  SKPhysicsContactDelegate {
-    
     var exitNode: ExitNode!
     var playerNode: PlayerNode!
     
@@ -49,22 +44,41 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         firstUnPause = true
         self.physicsWorld.gravity = CGVector.zero
+        physicsWorld.contactDelegate = self
         //physicsBody!.categoryBitMask = PhysicsCategory.Edge
         
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
-        
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
             }
         })
         pauseNode.attach(scene: self)
-        
-        
+        print(self.playerNode.physicsBody?.categoryBitMask)
+        print(self.exitNode.physicsBody?.categoryBitMask)
+        // print(playable)
         pause()
         
 
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        if !playable {
+            return
+        }
+        let collision = contact.bodyA.categoryBitMask
+            | contact.bodyB.categoryBitMask
+        // simplified from physics category to see if that worked.
+        if collision == 1 | 8 {
+            print("SUCCESS")
+            win()
+        } else if collision == 1
+            | 4 {
+            print("FAIL")
+            playable = false
+            lose()
+        }
     }
     
     
@@ -97,25 +111,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
     
-    func didBegin(_ contact: SKPhysicsContact) {
-        if !playable {
-            return
-        }
-        let collision = contact.bodyA.categoryBitMask
-            | contact.bodyB.categoryBitMask
-        if collision == PhysicsCategory.Ball | PhysicsCategory.Goal {
-            print("SUCCESS")
-            win()
-        } else if collision == PhysicsCategory.Ball
-            | PhysicsCategory.Edge {
-            print("FAIL")
-            playable = false
-            lose()
-        }
-    }
-    
     func lose() {
-        perform(#selector(loseGame), with: nil, afterDelay: 5)
+        perform(#selector(GameScene.loseGame), with: nil, afterDelay: 5)
     }
     func loseGame() {
         let scene = GameScene(fileNamed:"Lose")
@@ -125,11 +122,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     func win() {
         playable = false
-        perform(#selector(winGame), with: nil,
-                afterDelay: 3)
+        perform(#selector(GameScene.winGame), with: nil,
+                afterDelay: 2)
     }
     func winGame() {
-        let scene = GameScene(fileNamed:"Win")
+        let scene = GameScene(fileNamed: "GameScene")
         scene!.scaleMode = scaleMode
         view!.presentScene(scene)
     }
