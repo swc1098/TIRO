@@ -15,8 +15,12 @@
 		3F0D777A1DD3E1960041EF21 /* otherbg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D77791DD3E1960041EF21 /* otherbg.jpg */; };
 		3F0D777E1DD3E2FA0041EF21 /* Win.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D777D1DD3E2FA0041EF21 /* Win.sks */; };
 		3F0D77801DD3E5330041EF21 /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */; };
+		3F126FA51DDCF37C000464DB /* TransScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F126FA41DDCF37C000464DB /* TransScene.swift */; };
+		3F126FA91DDCFA91000464DB /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F126FA81DDCFA91000464DB /* Level2.sks */; };
+		3F126FAB1DDCFE51000464DB /* Home.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F126FAA1DDCFE51000464DB /* Home.sks */; };
+		3F126FAD1DDCFFBE000464DB /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F126FAC1DDCFFBE000464DB /* GameOver.sks */; };
 		3FA639FF1DD38EB700BBEFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */; };
-		3FA63A011DD38EB700BBEFE9 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A001DD38EB700BBEFE9 /* GameScene.sks */; };
+		3FA63A011DD38EB700BBEFE9 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A001DD38EB700BBEFE9 /* Level1.sks */; };
 		3FA63A031DD38EB700BBEFE9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A021DD38EB700BBEFE9 /* Actions.sks */; };
 		3FA63A051DD38EB700BBEFE9 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA63A041DD38EB700BBEFE9 /* GameScene.swift */; };
 		3FA63A071DD38EB700BBEFE9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */; };
@@ -51,9 +55,13 @@
 		3F0D77791DD3E1960041EF21 /* otherbg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = otherbg.jpg; sourceTree = "<group>"; };
 		3F0D777D1DD3E2FA0041EF21 /* Win.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Win.sks; sourceTree = "<group>"; };
 		3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
+		3F126FA41DDCF37C000464DB /* TransScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransScene.swift; sourceTree = "<group>"; };
+		3F126FA81DDCFA91000464DB /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
+		3F126FAA1DDCFE51000464DB /* Home.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Home.sks; sourceTree = "<group>"; };
+		3F126FAC1DDCFFBE000464DB /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
 		3FA639FB1DD38EB700BBEFE9 /* TIRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3FA63A001DD38EB700BBEFE9 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		3FA63A001DD38EB700BBEFE9 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
 		3FA63A021DD38EB700BBEFE9 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		3FA63A041DD38EB700BBEFE9 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -94,8 +102,11 @@
 		3F1A28A01DD3FB8800960E42 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				3FA63A001DD38EB700BBEFE9 /* GameScene.sks */,
+				3FA63A001DD38EB700BBEFE9 /* Level1.sks */,
+				3F126FA81DDCFA91000464DB /* Level2.sks */,
 				3F0D77771DD3E14A0041EF21 /* Lose.sks */,
+				3F126FAA1DDCFE51000464DB /* Home.sks */,
+				3F126FAC1DDCFFBE000464DB /* GameOver.sks */,
 				3F0D777D1DD3E2FA0041EF21 /* Win.sks */,
 			);
 			name = Scenes;
@@ -126,6 +137,7 @@
 				3F1A28A01DD3FB8800960E42 /* Scenes */,
 				3FA63A021DD38EB700BBEFE9 /* Actions.sks */,
 				3FA63A041DD38EB700BBEFE9 /* GameScene.swift */,
+				3F126FA41DDCF37C000464DB /* TransScene.swift */,
 				3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */,
 				3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */,
 				3F0D77751DD3DF270041EF21 /* ExitNode.swift */,
@@ -204,7 +216,7 @@
 				TargetAttributes = {
 					3FA639FA1DD38EB700BBEFE9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JMEUQLVKTY;
+						DevelopmentTeam = 3FRQ3MJ5Y9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -232,11 +244,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F126FAB1DDCFE51000464DB /* Home.sks in Resources */,
 				3F0D77781DD3E14A0041EF21 /* Lose.sks in Resources */,
 				3FA63A0A1DD38EB700BBEFE9 /* Main.storyboard in Resources */,
-				3FA63A011DD38EB700BBEFE9 /* GameScene.sks in Resources */,
+				3FA63A011DD38EB700BBEFE9 /* Level1.sks in Resources */,
 				3FA63A331DD390BA00BBEFE9 /* bg.png in Resources */,
+				3F126FA91DDCFA91000464DB /* Level2.sks in Resources */,
 				3F0D777E1DD3E2FA0041EF21 /* Win.sks in Resources */,
+				3F126FAD1DDCFFBE000464DB /* GameOver.sks in Resources */,
 				3FA63A0C1DD38EB700BBEFE9 /* Assets.xcassets in Resources */,
 				3FA63A0F1DD38EB700BBEFE9 /* LaunchScreen.storyboard in Resources */,
 				3F0D77721DD3D6B20041EF21 /* spark.png in Resources */,
@@ -257,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FA63A051DD38EB700BBEFE9 /* GameScene.swift in Sources */,
+				3F126FA51DDCF37C000464DB /* TransScene.swift in Sources */,
 				3FA63A271DD38F8F00BBEFE9 /* CGPoint+Extensions.swift in Sources */,
 				3F0D77801DD3E5330041EF21 /* PlayerNode.swift in Sources */,
 				3FA63A301DD38F8F00BBEFE9 /* SKTTimingFunctions.swift in Sources */,
@@ -395,10 +411,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JMEUQLVKTY;
+				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -408,10 +424,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JMEUQLVKTY;
+				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

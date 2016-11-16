@@ -15,6 +15,8 @@ protocol EventListenerNode {
     func didMoveToScene()
 }
 
+
+
 struct PhysicsCategory {
     static let None: UInt32 = 0
     static let Ball: UInt32 = 0b1 // 1
@@ -26,6 +28,9 @@ struct PhysicsCategory {
 class GameScene: SKScene,  SKPhysicsContactDelegate {
     var exitNode: ExitNode!
     var playerNode: PlayerNode!
+    
+    static var currentlevel: Int = 0
+    static var Maxlevel: Int = 2
     
     var firstUnPause = true
     
@@ -41,11 +46,14 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
     
+    //MARK - collision -
     override func didMove(to view: SKView) {
         firstUnPause = true
         self.physicsWorld.gravity = CGVector.zero
-        physicsWorld.contactDelegate = self
         //physicsBody!.categoryBitMask = PhysicsCategory.Edge
+        physicsWorld.contactDelegate = self
+
+
         
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
@@ -72,7 +80,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         // simplified from physics category to see if that worked.
         if collision == 1 | 8 {
             print("SUCCESS")
-            win()
+            if(GameScene.currentlevel < GameScene.Maxlevel){
+               win()
+            } else {
+                end()
+            }
+            
         } else if collision == 1
             | 4 {
             print("FAIL")
@@ -112,10 +125,21 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     }
     
     func lose() {
-        perform(#selector(GameScene.loseGame), with: nil, afterDelay: 5)
+        perform(#selector(GameScene.loseGame), with: nil, afterDelay: 0.5)
+        //loseGame()
     }
     func loseGame() {
-        let scene = GameScene(fileNamed:"Lose")
+        let scene = SKScene(fileNamed: "Lose")
+        scene!.scaleMode = scaleMode
+        view!.presentScene(scene)
+    }
+    
+    func end() {
+        perform(#selector(GameScene.endGame), with: nil, afterDelay: 0.5)
+        //loseGame()
+    }
+    func endGame() {
+        let scene = SKScene(fileNamed: "GameOver")
         scene!.scaleMode = scaleMode
         view!.presentScene(scene)
     }
@@ -123,10 +147,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     func win() {
         playable = false
         perform(#selector(GameScene.winGame), with: nil,
-                afterDelay: 2)
+                afterDelay: 0.5)
     }
     func winGame() {
-        let scene = GameScene(fileNamed: "GameScene")
+        let scene = SKScene(fileNamed: "Win")
         scene!.scaleMode = scaleMode
         view!.presentScene(scene)
     }
@@ -155,7 +179,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         
         if(!gameIsPaused){
-        self.physicsWorld.gravity = MotionMonitor.shareMotionMonitor.gravityVectorNormalized * gravityForce
+            var grav = MotionMonitor.shareMotionMonitor.gravityVectorNormalized * gravityForce
+            
+            if(grav.dy > 0){
+                grav.dy *= -1
+            }
+        self.physicsWorld.gravity = grav
         
         //print(playerNode.position)
         }
