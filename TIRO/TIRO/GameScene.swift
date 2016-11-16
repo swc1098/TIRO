@@ -189,9 +189,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             if(grav.dy > 0){
                 grav.dy *= -1
             }
-        self.physicsWorld.gravity = grav
+            self.physicsWorld.gravity = grav
+            
+            if(playerNode.position.y < -540){
+                loseGame()
+            }
         
-        //print(playerNode.position)
         }
     }
 }
