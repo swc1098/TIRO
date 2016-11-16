@@ -9,7 +9,8 @@
 import SpriteKit
 class PlayerNode: SKSpriteNode, EventListenerNode {
     
-    let jumpForce: CGVector = CGVector(dx: 0, dy: 250)
+    let jumpForce: CGVector = CGVector(dx: 0, dy: 150)
+    let padForce: CGVector = CGVector(dx:0, dy: 300)
     var jumpsLeft = 0
     var maxJumps = 1
     
@@ -35,5 +36,9 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
             jumpsLeft -= 1;
             self.physicsBody?.applyImpulse(self.jumpForce)
         }
+    }
+    
+    func padJump(){
+        self.physicsBody?.applyImpulse(self.padForce)
     }
 }

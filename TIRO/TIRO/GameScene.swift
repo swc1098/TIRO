@@ -22,12 +22,15 @@ struct PhysicsCategory {
     static let Ball: UInt32 = 0b1 // 1
     static let Platform: UInt32 = 0b10 // 2
     static let Edge: UInt32 = 0b100 // 4
-    static let Goal: UInt32 = 0b1000 // 8
+    static let Jump: UInt32 = 0b1000 // 8
+    static let Hazard: UInt32 = 0b10000 // 16
+    static let Goal: UInt32 = 0b100000 // 32
 }
 
 class GameScene: SKScene,  SKPhysicsContactDelegate {
     var exitNode: ExitNode!
     var playerNode: PlayerNode!
+    var jumpNode: JumpNode?
     
     static var currentlevel: Int = 0
     static var Maxlevel: Int = 2
@@ -57,6 +60,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
+        jumpNode = childNode(withName:"jumppad") as? JumpNode
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
@@ -65,6 +69,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         pauseNode.attach(scene: self)
         print(self.playerNode.physicsBody?.categoryBitMask)
         print(self.exitNode.physicsBody?.categoryBitMask)
+        print(self.jumpNode?.physicsBody?.categoryBitMask)
         // print(playable)
         pause()
         
@@ -78,16 +83,17 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         let collision = contact.bodyA.categoryBitMask
             | contact.bodyB.categoryBitMask
         // simplified from physics category to see if that worked.
-        if collision == 1 | 8 {
+        if collision == 1 | 32 {
             print("SUCCESS")
             if(GameScene.currentlevel < GameScene.Maxlevel){
-               win()
+                win()
             } else {
                 end()
             }
             
-        } else if collision == 1
-            | 4 {
+        } else if collision == 1 | 8{
+            playerNode.padJump()
+        } else if collision == 1 | 4 {
             print("FAIL")
             playable = false
             lose()

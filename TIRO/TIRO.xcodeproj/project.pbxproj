@@ -19,6 +19,7 @@
 		3F126FA91DDCFA91000464DB /* Level2.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F126FA81DDCFA91000464DB /* Level2.sks */; };
 		3F126FAB1DDCFE51000464DB /* Home.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F126FAA1DDCFE51000464DB /* Home.sks */; };
 		3F126FAD1DDCFFBE000464DB /* GameOver.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F126FAC1DDCFFBE000464DB /* GameOver.sks */; };
+		3F32A6781DDD16E50069D5DD /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F32A6771DDD16E50069D5DD /* pause.png */; };
 		3FA639FF1DD38EB700BBEFE9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */; };
 		3FA63A011DD38EB700BBEFE9 /* Level1.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A001DD38EB700BBEFE9 /* Level1.sks */; };
 		3FA63A031DD38EB700BBEFE9 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A021DD38EB700BBEFE9 /* Actions.sks */; };
@@ -43,6 +44,7 @@
 		3FA63A381DD395A600BBEFE9 /* wood_horiz1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A371DD395A600BBEFE9 /* wood_horiz1.png */; };
 		3FA63A3C1DD396DF00BBEFE9 /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FA63A3B1DD396DF00BBEFE9 /* circle.png */; };
 		3FAF1A931DD3C00F003288C3 /* PauseSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAF1A921DD3C00F003288C3 /* PauseSprite.swift */; };
+		3FD4206F1DDD0EF70058EFBB /* JumpNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4206E1DDD0EF70058EFBB /* JumpNode.swift */; };
 		3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +61,7 @@
 		3F126FA81DDCFA91000464DB /* Level2.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level2.sks; sourceTree = "<group>"; };
 		3F126FAA1DDCFE51000464DB /* Home.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Home.sks; sourceTree = "<group>"; };
 		3F126FAC1DDCFFBE000464DB /* GameOver.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameOver.sks; sourceTree = "<group>"; };
+		3F32A6771DDD16E50069D5DD /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		3FA639FB1DD38EB700BBEFE9 /* TIRO.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TIRO.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FA639FE1DD38EB700BBEFE9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3FA63A001DD38EB700BBEFE9 /* Level1.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level1.sks; sourceTree = "<group>"; };
@@ -85,6 +88,7 @@
 		3FA63A371DD395A600BBEFE9 /* wood_horiz1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood_horiz1.png; sourceTree = "<group>"; };
 		3FA63A3B1DD396DF00BBEFE9 /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
 		3FAF1A921DD3C00F003288C3 /* PauseSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PauseSprite.swift; path = SKTUtils/PauseSprite.swift; sourceTree = "<group>"; };
+		3FD4206E1DDD0EF70058EFBB /* JumpNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JumpNode.swift; sourceTree = "<group>"; };
 		3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,6 +146,7 @@
 				3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */,
 				3F0D77751DD3DF270041EF21 /* ExitNode.swift */,
 				3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */,
+				3FD4206E1DDD0EF70058EFBB /* JumpNode.swift */,
 				3F0D776F1DD3D6B20041EF21 /* ExitFx.sks */,
 				3F0D77701DD3D6B20041EF21 /* spark.png */,
 				3FA63A081DD38EB700BBEFE9 /* Main.storyboard */,
@@ -175,6 +180,7 @@
 		3FA63A341DD390BF00BBEFE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F32A6771DDD16E50069D5DD /* pause.png */,
 				3F0D77731DD3DB090041EF21 /* DoorGoal.jpg */,
 				3FA63A3B1DD396DF00BBEFE9 /* circle.png */,
 				3F0D77791DD3E1960041EF21 /* otherbg.jpg */,
@@ -216,7 +222,7 @@
 				TargetAttributes = {
 					3FA639FA1DD38EB700BBEFE9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3FRQ3MJ5Y9;
+						DevelopmentTeam = JMEUQLVKTY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -258,6 +264,7 @@
 				3F0D77741DD3DB090041EF21 /* DoorGoal.jpg in Resources */,
 				3FA63A3C1DD396DF00BBEFE9 /* circle.png in Resources */,
 				3F0D777A1DD3E1960041EF21 /* otherbg.jpg in Resources */,
+				3F32A6781DDD16E50069D5DD /* pause.png in Resources */,
 				3F0D77711DD3D6B20041EF21 /* ExitFx.sks in Resources */,
 				3FA63A031DD38EB700BBEFE9 /* Actions.sks in Resources */,
 				3FA63A381DD395A600BBEFE9 /* wood_horiz1.png in Resources */,
@@ -271,6 +278,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD4206F1DDD0EF70058EFBB /* JumpNode.swift in Sources */,
 				3FA63A051DD38EB700BBEFE9 /* GameScene.swift in Sources */,
 				3F126FA51DDCF37C000464DB /* TransScene.swift in Sources */,
 				3FA63A271DD38F8F00BBEFE9 /* CGPoint+Extensions.swift in Sources */,
@@ -411,10 +419,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
+				DEVELOPMENT_TEAM = JMEUQLVKTY;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -424,10 +432,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
+				DEVELOPMENT_TEAM = JMEUQLVKTY;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
