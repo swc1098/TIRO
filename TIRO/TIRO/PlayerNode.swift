@@ -9,6 +9,10 @@
 import SpriteKit
 class PlayerNode: SKSpriteNode, EventListenerNode {
     
+    let jumpForce: CGVector = CGVector(dx: 0, dy: 250)
+    var jumpsLeft = 1
+    var maxJumps = 1
+    
     func didMoveToScene() {
         
         print("player added to scene")
@@ -18,8 +22,18 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
             | PhysicsCategory.Edge | PhysicsCategory.Goal
         
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Goal
-        | PhysicsCategory.Edge
+        | PhysicsCategory.Edge | PhysicsCategory.Platform
         
-        self.position = CGPoint(x: 30, y: 200)
+    }
+    
+    func restoreJumps(){
+        jumpsLeft = maxJumps
+    }
+    
+    func jump(){
+        if(jumpsLeft > 0){
+            jumpsLeft -= 1;
+            self.physicsBody?.applyImpulse(self.jumpForce)
+        }
     }
 }

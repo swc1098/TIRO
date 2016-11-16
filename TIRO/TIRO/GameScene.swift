@@ -92,6 +92,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             playable = false
             lose()
         }
+        
+        if(contact.bodyA.categoryBitMask == 1 || contact.bodyB.categoryBitMask == 1){
+            playerNode.restoreJumps()
+        }
     }
     
     
@@ -117,7 +121,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         MotionMonitor.shareMotionMonitor.startUpdates()
         
         if(firstUnPause){
-            playerNode.position = CGPoint(x:30,y:200)
             playerNode.physicsBody?.velocity = CGVector.zero
             playerNode.physicsBody?.angularVelocity = 0
             firstUnPause = false
@@ -160,6 +163,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             gameIsPaused = false
             return
         }
+        playerNode.jump()
+        
     }
 
     
