@@ -31,6 +31,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     var exitNode: ExitNode!
     var playerNode: PlayerNode!
     var jumpNode: JumpNode?
+    //var pauseButton: SKShapeNode?
     
     static var currentlevel: Int = 0
     static var Maxlevel: Int = 2
@@ -61,6 +62,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
         jumpNode = childNode(withName:"jumppad") as? JumpNode
+        //pauseButton = childNode(withName:"pause") as? SKShapeNode
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
@@ -93,6 +95,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             
         } else if collision == 1 | 8{
             playerNode.padJump()
+            playerNode.jumpsLeft = 0
         } else if collision == 1 | 4 {
             print("FAIL")
             playable = false
@@ -169,6 +172,17 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             gameIsPaused = false
             return
         }
+        
+        //for touch: AnyObject in touches{
+        //    let location = touch.location(in:self)
+        //    if pauseButton!.contains(location){
+        //        if(gameIsPaused){
+        //            gameIsPaused = false;
+        //        } else{
+        //            gameIsPaused = true;
+        //        }
+        //    }
+        //}
         playerNode.jump()
         
     }
