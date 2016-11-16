@@ -69,9 +69,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             }
         })
         pauseNode.attach(scene: self)
-        print(self.playerNode.physicsBody?.categoryBitMask)
-        print(self.exitNode.physicsBody?.categoryBitMask)
-        print(self.jumpNode?.physicsBody?.categoryBitMask)
+        //print(self.playerNode.physicsBody?.categoryBitMask)
+        //print(self.exitNode.physicsBody?.categoryBitMask)
+        //print(self.jumpNode?.physicsBody?.categoryBitMask)
         // print(playable)
         pause()
         

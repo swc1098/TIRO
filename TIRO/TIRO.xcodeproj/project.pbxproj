@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F0BBED71DDD1EF300C41AD1 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BBED61DDD1EF300C41AD1 /* paddle.png */; };
+		3F0BBED91DDD20EF00C41AD1 /* yellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BBED81DDD20EF00C41AD1 /* yellow.png */; };
+		3F0BBEDB1DDD212D00C41AD1 /* Level3.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F0BBEDA1DDD212D00C41AD1 /* Level3.sks */; };
 		3F0D77711DD3D6B20041EF21 /* ExitFx.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D776F1DD3D6B20041EF21 /* ExitFx.sks */; };
 		3F0D77721DD3D6B20041EF21 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D77701DD3D6B20041EF21 /* spark.png */; };
 		3F0D77741DD3DB090041EF21 /* DoorGoal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F0D77731DD3DB090041EF21 /* DoorGoal.jpg */; };
@@ -49,6 +52,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F0BBED61DDD1EF300C41AD1 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
+		3F0BBED81DDD20EF00C41AD1 /* yellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yellow.png; sourceTree = "<group>"; };
+		3F0BBEDA1DDD212D00C41AD1 /* Level3.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level3.sks; sourceTree = "<group>"; };
 		3F0D776F1DD3D6B20041EF21 /* ExitFx.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExitFx.sks; sourceTree = "<group>"; };
 		3F0D77701DD3D6B20041EF21 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		3F0D77731DD3DB090041EF21 /* DoorGoal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = DoorGoal.jpg; sourceTree = "<group>"; };
@@ -108,6 +114,7 @@
 			children = (
 				3FA63A001DD38EB700BBEFE9 /* Level1.sks */,
 				3F126FA81DDCFA91000464DB /* Level2.sks */,
+				3F0BBEDA1DDD212D00C41AD1 /* Level3.sks */,
 				3F0D77771DD3E14A0041EF21 /* Lose.sks */,
 				3F126FAA1DDCFE51000464DB /* Home.sks */,
 				3F126FAC1DDCFFBE000464DB /* GameOver.sks */,
@@ -180,6 +187,8 @@
 		3FA63A341DD390BF00BBEFE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3F0BBED81DDD20EF00C41AD1 /* yellow.png */,
+				3F0BBED61DDD1EF300C41AD1 /* paddle.png */,
 				3F32A6771DDD16E50069D5DD /* pause.png */,
 				3F0D77731DD3DB090041EF21 /* DoorGoal.jpg */,
 				3FA63A3B1DD396DF00BBEFE9 /* circle.png */,
@@ -217,7 +226,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = swc1098;
 				TargetAttributes = {
 					3FA639FA1DD38EB700BBEFE9 = {
@@ -251,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F126FAB1DDCFE51000464DB /* Home.sks in Resources */,
+				3F0BBED71DDD1EF300C41AD1 /* paddle.png in Resources */,
 				3F0D77781DD3E14A0041EF21 /* Lose.sks in Resources */,
 				3FA63A0A1DD38EB700BBEFE9 /* Main.storyboard in Resources */,
 				3FA63A011DD38EB700BBEFE9 /* Level1.sks in Resources */,
@@ -266,6 +276,8 @@
 				3F0D777A1DD3E1960041EF21 /* otherbg.jpg in Resources */,
 				3F32A6781DDD16E50069D5DD /* pause.png in Resources */,
 				3F0D77711DD3D6B20041EF21 /* ExitFx.sks in Resources */,
+				3F0BBED91DDD20EF00C41AD1 /* yellow.png in Resources */,
+				3F0BBEDB1DDD212D00C41AD1 /* Level3.sks in Resources */,
 				3FA63A031DD38EB700BBEFE9 /* Actions.sks in Resources */,
 				3FA63A381DD395A600BBEFE9 /* wood_horiz1.png in Resources */,
 			);
@@ -342,6 +354,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -391,6 +404,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
