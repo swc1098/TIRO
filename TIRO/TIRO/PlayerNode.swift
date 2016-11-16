@@ -10,7 +10,7 @@ import SpriteKit
 class PlayerNode: SKSpriteNode, EventListenerNode {
     
     let jumpForce: CGVector = CGVector(dx: 0, dy: 250)
-    var jumpsLeft = 1
+    var jumpsLeft = 0
     var maxJumps = 1
     
     func didMoveToScene() {
