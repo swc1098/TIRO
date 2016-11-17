@@ -32,7 +32,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     var playerNode: PlayerNode!
     var jumpNode: JumpNode?
     var hazardNode: HazardNode?
-    //var pauseButton: SKShapeNode?
+    var pauseButton: SKSpriteNode?
+    
+    var canUnPause = false
     
     static var currentlevel: Int = 0
     static var Maxlevel: Int = 3
@@ -59,12 +61,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
 
 
-        
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
         jumpNode = childNode(withName:"jumppad") as? JumpNode
         hazardNode = childNode(withName:"hazard") as? HazardNode
-        //pauseButton = childNode(withName:"pause") as? SKShapeNode
+        pauseButton = childNode(withName:"pause") as! SKSpriteNode
         enumerateChildNodes(withName: "//*", using: { node, _ in
             if let eventListenerNode = node as? EventListenerNode {
                 eventListenerNode.didMoveToScene()
@@ -121,20 +122,25 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 self.pauseNode.paused()
                 }, SKAction.run {
                     self.pauseNode.paused()
+                    self.physicsWorld.gravity = CGVector.zero
                     self.physicsWorld.speed = 0.0
                     self.view?.isPaused = true
                     MotionMonitor.shareMotionMonitor.stopUpdates()
+                    self.canUnPause = true
                 }])
         )
     }
     
     func unPause() {
+        if(!canUnPause){
+            return
+        }
         pauseNode.unPaused()
         self.view?.isPaused = false
         physicsWorld.speed = 1.0
         lastUpdateTime = 0
         MotionMonitor.shareMotionMonitor.startUpdates()
-        
+        canUnPause = false
         if(firstUnPause){
             playerNode.physicsBody?.velocity = CGVector.zero
             playerNode.physicsBody?.angularVelocity = 0
@@ -164,8 +170,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     func win() {
         playable = false
-        perform(#selector(GameScene.winGame), with: nil,
-                afterDelay: 0.5)
+        winGame()
     }
     func winGame() {
         let scene = SKScene(fileNamed: "Win")
@@ -179,16 +184,13 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             return
         }
         
-        //for touch: AnyObject in touches{
-        //    let location = touch.location(in:self)
-        //    if pauseButton!.contains(location){
-        //        if(gameIsPaused){
-        //            gameIsPaused = false;
-        //        } else{
-        //            gameIsPaused = true;
-        //        }
-        //    }
-        //}
+        for touch: AnyObject in touches{
+            let location = touch.location(in:self)
+            if pauseButton!.contains(location){
+                gameIsPaused = true;
+                return;
+            }
+        }
         playerNode.jump()
         
     }
@@ -210,12 +212,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         
         if(!gameIsPaused){
-            var grav = MotionMonitor.shareMotionMonitor.gravityVectorNormalized * gravityForce
+            var grav = MotionMonitor.shareMotionMonitor.gravityVectorNormalized
             
-            if(grav.dy > 0){
-                grav.dy *= -1
-            }
-            self.physicsWorld.gravity = grav
+            grav.dy = -1
+            
+            self.physicsWorld.gravity = grav * gravityForce
             
             if(playerNode.position.y < -540){
                 loseGame()

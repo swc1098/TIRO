@@ -19,7 +19,7 @@ class ExitNode: SKSpriteNode, EventListenerNode {
         self.physicsBody!.isDynamic = false
         
         self.physicsBody!.categoryBitMask = PhysicsCategory.Goal
-        self.physicsBody!.collisionBitMask = PhysicsCategory.None | PhysicsCategory.Ball
+        self.physicsBody!.collisionBitMask = PhysicsCategory.None 
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Ball
         
     }

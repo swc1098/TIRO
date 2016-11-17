@@ -20,10 +20,12 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
         
         self.physicsBody!.categoryBitMask = PhysicsCategory.Ball
         self.physicsBody!.collisionBitMask = PhysicsCategory.Platform
-            | PhysicsCategory.Edge | PhysicsCategory.Goal | PhysicsCategory.Hazard
+            | PhysicsCategory.Edge
         
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Goal
         | PhysicsCategory.Edge | PhysicsCategory.Platform | PhysicsCategory.Hazard
+        
+        self.zPosition =  999
         
     }
     
@@ -39,6 +41,7 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
     }
     
     func padJump(){
+        self.physicsBody?.velocity.dy=0;
         self.physicsBody?.applyImpulse(self.padForce)
     }
 }

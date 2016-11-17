@@ -9,13 +9,13 @@
 import SpriteKit
 class HazardNode: SKSpriteNode, EventListenerNode {
     
-    let movementForce: CGVector = CGVector(dx: 0, dy: 340)
+    let movementForce: CGVector = CGVector(dx: 0, dy: 180)
     var canJump = true
     func didMoveToScene() {
         print("stage hazard added to scene")
         
         self.physicsBody!.categoryBitMask = PhysicsCategory.Hazard
-        self.physicsBody!.collisionBitMask = PhysicsCategory.Ball | PhysicsCategory.Platform
+        self.physicsBody!.collisionBitMask =  PhysicsCategory.Platform
         
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Ball | PhysicsCategory.Platform
         
