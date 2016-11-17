@@ -20,10 +20,10 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
         
         self.physicsBody!.categoryBitMask = PhysicsCategory.Ball
         self.physicsBody!.collisionBitMask = PhysicsCategory.Platform
-            | PhysicsCategory.Edge | PhysicsCategory.Goal
+            | PhysicsCategory.Edge | PhysicsCategory.Goal | PhysicsCategory.Hazard
         
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Goal
-        | PhysicsCategory.Edge | PhysicsCategory.Platform
+        | PhysicsCategory.Edge | PhysicsCategory.Platform | PhysicsCategory.Hazard
         
     }
     
