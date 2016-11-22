@@ -37,7 +37,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     var canUnPause = false
     
     static var currentlevel: Int = 0
-    static var Maxlevel: Int = 3
+    static var Maxlevel: Int = 4
     
     var firstUnPause = true
     
