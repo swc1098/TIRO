@@ -9,7 +9,7 @@
 import SpriteKit
 class HazardNode: SKSpriteNode, EventListenerNode {
     
-    let movementForce: CGVector = CGVector(dx: 0, dy: 180)
+    let movementForce: CGVector = CGVector(dx: 0, dy: 120)
     var canJump = true
     func didMoveToScene() {
         print("stage hazard added to scene")

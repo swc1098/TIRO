@@ -115,6 +115,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F0897571DE4FA2100F7F6F0 /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				3F0D77751DD3DF270041EF21 /* ExitNode.swift */,
+				3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */,
+				3FD4206E1DDD0EF70058EFBB /* JumpNode.swift */,
+				3F5E386B1DDD26FB0086235C /* HazardNode.swift */,
+			);
+			name = Nodes;
+			sourceTree = "<group>";
+		};
 		3F1A28A01DD3FB8800960E42 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -157,10 +168,7 @@
 				3F126FA41DDCF37C000464DB /* TransScene.swift */,
 				3FA63A061DD38EB700BBEFE9 /* GameViewController.swift */,
 				3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */,
-				3F0D77751DD3DF270041EF21 /* ExitNode.swift */,
-				3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */,
-				3FD4206E1DDD0EF70058EFBB /* JumpNode.swift */,
-				3F5E386B1DDD26FB0086235C /* HazardNode.swift */,
+				3F0897571DE4FA2100F7F6F0 /* Nodes */,
 				3F0D776F1DD3D6B20041EF21 /* ExitFx.sks */,
 				3F0D77701DD3D6B20041EF21 /* spark.png */,
 				3FA63A081DD38EB700BBEFE9 /* Main.storyboard */,
@@ -240,7 +248,7 @@
 				TargetAttributes = {
 					3FA639FA1DD38EB700BBEFE9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = 3FRQ3MJ5Y9;
+						DevelopmentTeam = JMEUQLVKTY;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -445,10 +453,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
+				DEVELOPMENT_TEAM = JMEUQLVKTY;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -458,10 +466,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
+				DEVELOPMENT_TEAM = JMEUQLVKTY;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
