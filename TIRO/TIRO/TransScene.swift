@@ -32,12 +32,12 @@ class TransScene: SKScene {
     func loadLevel() {
         let scene = GameScene(fileNamed: "Level\(GameScene.currentlevel)")
         scene!.scaleMode = scaleMode
-        view!.presentScene(scene)
+        view?.presentScene(scene)
     }
     
     func loadHome() {
         let scene = GameScene(fileNamed: "Home")
         scene!.scaleMode = scaleMode
-        view!.presentScene(scene)
+        view?.presentScene(scene)
     }
 }
