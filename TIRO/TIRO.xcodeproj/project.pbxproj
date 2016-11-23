@@ -59,6 +59,7 @@
 		3FEB4ECC1DE50EDD0025DBCC /* jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4ECB1DE50EDD0025DBCC /* jump.wav */; };
 		3FEB4ECE1DE50F4C0025DBCC /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4ECD1DE50F4C0025DBCC /* win.wav */; };
 		3FEB4ED01DE511860025DBCC /* levelWin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4ECF1DE511860025DBCC /* levelWin.wav */; };
+		3FEB4ED21DE516100025DBCC /* Jump.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4ED11DE516100025DBCC /* Jump.sks */; };
 		3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */; };
 /* End PBXBuildFile section */
 
@@ -117,6 +118,7 @@
 		3FEB4ECB1DE50EDD0025DBCC /* jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = jump.wav; sourceTree = "<group>"; };
 		3FEB4ECD1DE50F4C0025DBCC /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 		3FEB4ECF1DE511860025DBCC /* levelWin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelWin.wav; sourceTree = "<group>"; };
+		3FEB4ED11DE516100025DBCC /* Jump.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Jump.sks; sourceTree = "<group>"; };
 		3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionMonitor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +189,7 @@
 				3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */,
 				3F0897571DE4FA2100F7F6F0 /* Nodes */,
 				3F0D776F1DD3D6B20041EF21 /* ExitFx.sks */,
+				3FEB4ED11DE516100025DBCC /* Jump.sks */,
 				3F0D77701DD3D6B20041EF21 /* spark.png */,
 				3FEB4EC81DE50D1F0025DBCC /* Music/Fx */,
 				3FA63A081DD38EB700BBEFE9 /* Main.storyboard */,
@@ -311,6 +314,7 @@
 				3F126FAB1DDCFE51000464DB /* Home.sks in Resources */,
 				3F0BBED71DDD1EF300C41AD1 /* paddle.png in Resources */,
 				3FEB4ECC1DE50EDD0025DBCC /* jump.wav in Resources */,
+				3FEB4ED21DE516100025DBCC /* Jump.sks in Resources */,
 				3FEB4ECE1DE50F4C0025DBCC /* win.wav in Resources */,
 				3F0D77781DD3E14A0041EF21 /* Lose.sks in Resources */,
 				3FA63A0A1DD38EB700BBEFE9 /* Main.storyboard in Resources */,
