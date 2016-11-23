@@ -72,6 +72,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             }
         })
         pauseNode.attach(scene: self)
+        
+        let music = SKAudioNode(fileNamed: "bgMusic.wav")
+        addChild(music)
         //print(self.playerNode.physicsBody?.categoryBitMask)
         //print(self.exitNode.physicsBody?.categoryBitMask)
         //print(self.jumpNode?.physicsBody?.categoryBitMask)
@@ -90,6 +93,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         // simplified from physics category to see if that worked.
         if collision == 1 | 32 {
             print("SUCCESS")
+            SKTAudio.sharedInstance().playSoundEffect("win.wav")
             if(GameScene.currentlevel < GameScene.Maxlevel){
                 win()
             } else {
@@ -101,10 +105,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             playerNode.jumpsLeft = 0
         } else if collision == 1 | 4 {
             print("FAIL")
+            run(SKAction.playSoundFileNamed("fail.wav", waitForCompletion: false))
             playable = false
             lose()
         } else if collision == 1 | 16{
             print("FAIL")
+            run(SKAction.playSoundFileNamed("fail.wav", waitForCompletion: false))
             playable = false
             lose()
         }
@@ -219,6 +225,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             self.physicsWorld.gravity = grav * gravityForce
             
             if(playerNode.position.y < -540){
+                run(SKAction.playSoundFileNamed("fail.wav", waitForCompletion: false))
                 loseGame()
             }
         

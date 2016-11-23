@@ -36,11 +36,13 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
     func jump(){
         if(jumpsLeft > 0){
             jumpsLeft -= 1;
+            run(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false))
             self.physicsBody?.applyImpulse(self.jumpForce)
         }
     }
     
     func padJump(){
+        run(SKAction.playSoundFileNamed("jump.wav", waitForCompletion: false))
         self.physicsBody?.velocity.dy=0;
         self.physicsBody?.applyImpulse(self.padForce)
     }
