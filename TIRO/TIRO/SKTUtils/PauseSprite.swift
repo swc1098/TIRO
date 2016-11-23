@@ -25,7 +25,7 @@ class PauseSprite {
         PauseText.fontSize = 100
         PauseText.position.x = rect.midX
         PauseText.position.y = rect.midY
-        PauseText.fontName = "Futura"
+        PauseText.fontName = "Hobo Std"
         
         node.addChild(PauseText)
     }
