@@ -17,7 +17,7 @@ class PauseSprite {
     init(){
         let rect = CGRect(x: -960, y: -540, width: 1920, height: 1080)
         node = SKShapeNode(rect: rect)
-        node.fillColor = SKColor.gray
+        node.fillColor = SKColor.white
         node.alpha = pausedAlpha
         node.zPosition = 10000
         
