@@ -20,7 +20,7 @@ class TransScene: SKScene {
             perform(#selector(loadLevel), with: nil, afterDelay: 0.5)
         }
         if(self.name == "Home"){
-            GameScene.currentlevel = 1
+            GameScene.currentlevel = 5
             perform(#selector(loadLevel), with: nil, afterDelay: 0.5)
         }
         if(self.name == "GameOver"){

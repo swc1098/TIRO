@@ -61,6 +61,8 @@
 		3FEB4ED01DE511860025DBCC /* levelWin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4ECF1DE511860025DBCC /* levelWin.wav */; };
 		3FEB4ED21DE516100025DBCC /* Jump.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4ED11DE516100025DBCC /* Jump.sks */; };
 		3FF513921DD39BA100B5AD66 /* MotionMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */; };
+		B1CFA7951DF7D2DF00EAFA5D /* LockContainerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1CFA7941DF7D2DF00EAFA5D /* LockContainerNode.swift */; };
+		B1CFA7971DF7D39800EAFA5D /* Level5.sks in Resources */ = {isa = PBXBuildFile; fileRef = B1CFA7961DF7D39800EAFA5D /* Level5.sks */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +122,8 @@
 		3FEB4ECF1DE511860025DBCC /* levelWin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = levelWin.wav; sourceTree = "<group>"; };
 		3FEB4ED11DE516100025DBCC /* Jump.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Jump.sks; sourceTree = "<group>"; };
 		3FF513911DD39BA100B5AD66 /* MotionMonitor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MotionMonitor.swift; sourceTree = "<group>"; };
+		B1CFA7941DF7D2DF00EAFA5D /* LockContainerNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LockContainerNode.swift; sourceTree = "<group>"; };
+		B1CFA7961DF7D39800EAFA5D /* Level5.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Level5.sks; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				3F0D777F1DD3E5330041EF21 /* PlayerNode.swift */,
 				3FD4206E1DDD0EF70058EFBB /* JumpNode.swift */,
 				3F5E386B1DDD26FB0086235C /* HazardNode.swift */,
+				B1CFA7941DF7D2DF00EAFA5D /* LockContainerNode.swift */,
 			);
 			name = Nodes;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				3FA63A001DD38EB700BBEFE9 /* Level1.sks */,
 				3F126FA81DDCFA91000464DB /* Level2.sks */,
 				3F0BBEDA1DDD212D00C41AD1 /* Level3.sks */,
+				B1CFA7961DF7D39800EAFA5D /* Level5.sks */,
 				3F0897581DE5042B00F7F6F0 /* Level4.sks */,
 				3F0D77771DD3E14A0041EF21 /* Lose.sks */,
 				3F126FAA1DDCFE51000464DB /* Home.sks */,
@@ -283,7 +289,7 @@
 				TargetAttributes = {
 					3FA639FA1DD38EB700BBEFE9 = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = JMEUQLVKTY;
+						DevelopmentTeam = 3FRQ3MJ5Y9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -333,6 +339,7 @@
 				3FEB4ECA1DE50E340025DBCC /* fail.wav in Resources */,
 				3FEB4EC31DE50A630025DBCC /* Icon-App-29x29@2x.png in Resources */,
 				3FA63A3C1DD396DF00BBEFE9 /* circle.png in Resources */,
+				B1CFA7971DF7D39800EAFA5D /* Level5.sks in Resources */,
 				3F0D777A1DD3E1960041EF21 /* otherbg.jpg in Resources */,
 				3FEB4EC01DE50A2C0025DBCC /* Icon-App-60x60@3x.png in Resources */,
 				3F32A6781DDD16E50069D5DD /* pause.png in Resources */,
@@ -367,6 +374,7 @@
 				3FA63A2C1DD38F8F00BBEFE9 /* SKColor+Extensions.swift in Sources */,
 				3FA63A071DD38EB700BBEFE9 /* GameViewController.swift in Sources */,
 				3FA63A291DD38F8F00BBEFE9 /* Int+Extensions.swift in Sources */,
+				B1CFA7951DF7D2DF00EAFA5D /* LockContainerNode.swift in Sources */,
 				3FA63A2D1DD38F8F00BBEFE9 /* SKNode+Extensions.swift in Sources */,
 				3FAF1A931DD3C00F003288C3 /* PauseSprite.swift in Sources */,
 				3FA63A2E1DD38F8F00BBEFE9 /* SKTAudio.swift in Sources */,
@@ -497,10 +505,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JMEUQLVKTY;
+				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -510,10 +518,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = JMEUQLVKTY;
+				DEVELOPMENT_TEAM = 3FRQ3MJ5Y9;
 				INFOPLIST_FILE = TIRO/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.swc1098.TIRO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.djl1005.TIRO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
