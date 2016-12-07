@@ -16,15 +16,31 @@ class LockContainerNode: SKNode, EventListenerNode {
         //self.children
         
     }
+    
+    func destroy() {
+        print("boop")
+        
+        //customs delays require adding the feild to the locks userdata object in the sks file.
+        var delay: TimeInterval? = self.userData?["delay"] as? TimeInterval
+        
+        if(delay == nil){ delay = 0.25 }
+        
+        let action = SKAction.afterDelay(delay!, runBlock: {
+                self.children.last?.removeFromParent()
+            })
+        
+        run(SKAction.repeat(action, count: self.children.count))
+    }
 }
 
 class KeyNode: SKSpriteNode, EventListenerNode {
     
     func didMoveToScene() {
         
-        print("locks added to scene")
+        print("key added to scene")
         
-        //self.children
+        self.physicsBody!.categoryBitMask = PhysicsCategory.Key
+         self.physicsBody!.contactTestBitMask = PhysicsCategory.Ball
         
     }
 }

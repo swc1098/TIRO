@@ -23,7 +23,7 @@ class PlayerNode: SKSpriteNode, EventListenerNode {
             | PhysicsCategory.Edge
         
         self.physicsBody!.contactTestBitMask = PhysicsCategory.Goal
-        | PhysicsCategory.Edge | PhysicsCategory.Platform | PhysicsCategory.Hazard
+        | PhysicsCategory.Edge | PhysicsCategory.Platform | PhysicsCategory.Hazard | PhysicsCategory.Key
         
         self.zPosition =  999
         

@@ -25,6 +25,7 @@ struct PhysicsCategory {
     static let Jump: UInt32 = 0b1000 // 8
     static let Hazard: UInt32 = 0b10000 // 16
     static let Goal: UInt32 = 0b100000 // 32
+    static let Key: UInt32 = 0b1000000 // 64
 }
 
 class GameScene: SKScene,  SKPhysicsContactDelegate {
@@ -113,6 +114,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             run(SKAction.playSoundFileNamed("fail.wav", waitForCompletion: false))
             playable = false
             lose()
+        } else if collision == 1 | 64 {
+            self.childNode(withName: "Key")?.removeFromParent()
+            
+            let locks = self.childNode(withName: "Locks") as? LockContainerNode
+            locks?.destroy()
+            
         }
         
         if(contact.bodyA.categoryBitMask == 1 || contact.bodyB.categoryBitMask == 1){
