@@ -53,14 +53,31 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             gameIsPaused ? pause() : unPause()
         }
     }
+    var CountdownText:SKLabelNode!
+    
+    var timerNum: Int = 10
+    var countDownTimer = Timer()
     
     //MARK - collision -
     override func didMove(to view: SKView) {
+        
         firstUnPause = true
         self.physicsWorld.gravity = CGVector.zero
         //physicsBody!.categoryBitMask = PhysicsCategory.Edge
         physicsWorld.contactDelegate = self
-
+        
+        self.countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameScene.updateTimer), userInfo: nil, repeats: true)
+        
+        CountdownText = SKLabelNode(text: "\(timerNum)")
+        CountdownText.fontSize = 100
+        CountdownText.position.x = 0
+        CountdownText.position.y = 350
+        CountdownText.zPosition = 10000
+        CountdownText.fontName = "Hobo Std"
+        CountdownText.alpha = 0.5
+        
+        addChild(CountdownText)
+        
 
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
@@ -76,6 +93,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         
         let music = SKAudioNode(fileNamed: "bgMusic.wav")
         addChild(music)
+        
+        //time.fire()
         //print(self.playerNode.physicsBody?.categoryBitMask)
         //print(self.exitNode.physicsBody?.categoryBitMask)
         //print(self.jumpNode?.physicsBody?.categoryBitMask)
@@ -189,6 +208,25 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         let scene = SKScene(fileNamed: "Win")
         scene!.scaleMode = scaleMode
         view!.presentScene(scene)
+    }
+    
+    @objc func updateTimer(){
+        
+        if timerNum != 0 && gameIsPaused != true {
+            timerNum -= 1
+        }
+        
+        if self.timerNum <= 0 {
+            self.countDownTimer.invalidate()
+            self.lose()
+        }
+        else {
+            self.setLabel(num: "\(timerNum)")
+        }
+    }
+    
+    func setLabel(num: String) {
+        self.CountdownText.text = num
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
