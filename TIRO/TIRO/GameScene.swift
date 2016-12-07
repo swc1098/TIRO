@@ -74,6 +74,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         CountdownText.alpha = 0.5
         
         addChild(CountdownText)
+        
+        //reset timer num
+        timerNum = 10
 
         // counts down based on function
         self.countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameScene.updateTimer), userInfo: nil, repeats: true)
@@ -186,9 +189,9 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
         
         // loss handling creates an error
-        if self.timerNum < 0 {
+        if self.timerNum <= 0 {
             self.countDownTimer.invalidate()
-            //self.lose()
+            self.lose()
         }
         else {
             self.setLabel(num: "\(timerNum)")
@@ -207,7 +210,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     func loseGame() {
         let scene = SKScene(fileNamed: "Lose")
         scene!.scaleMode = scaleMode
-        view!.presentScene(scene)
+        view?.presentScene(scene)
     }
     
     func end() {

@@ -27,7 +27,7 @@ class TransScene: SKScene {
             for touch: AnyObject in touches{
                 let location = touch.location(in:self)
                 if playButton.contains(location){
-                    GameScene.currentlevel = 3
+                    GameScene.currentlevel = 1
                     perform(#selector(loadLevel), with: nil, afterDelay: 0.5)
                     return;
                 }
