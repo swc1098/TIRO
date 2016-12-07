@@ -20,10 +20,37 @@ class TransScene: SKScene {
             perform(#selector(loadLevel), with: nil, afterDelay: 0.5)
         }
         if(self.name == "Home"){
-            GameScene.currentlevel = 5
-            perform(#selector(loadLevel), with: nil, afterDelay: 0.5)
+            let playButton = childNode(withName:"play") as! SKLabelNode
+            let instructButton = childNode(withName:"instructions") as! SKLabelNode
+            let creditButton = childNode(withName:"credits") as! SKLabelNode
+            
+            for touch: AnyObject in touches{
+                let location = touch.location(in:self)
+                if playButton.contains(location){
+                    GameScene.currentlevel = 3
+                    perform(#selector(loadLevel), with: nil, afterDelay: 0.5)
+                    return;
+                }
+                if instructButton.contains(location){
+                    perform(#selector(loadInstruct), with: nil, afterDelay: 0.5)
+                }
+                if creditButton.contains(location){
+                    perform(#selector(loadCredits), with: nil, afterDelay: 0.5)
+                }
+                return
+            }
         }
         if(self.name == "GameOver"){
+            GameScene.currentlevel = 1
+            perform(#selector(loadHome), with: nil, afterDelay: 0.5)
+        }
+        if(self.name == "Instructions")
+        {
+            GameScene.currentlevel = 1
+            perform(#selector(loadHome), with: nil, afterDelay: 0.5)
+        }
+        if(self.name == "Credits")
+        {
             GameScene.currentlevel = 1
             perform(#selector(loadHome), with: nil, afterDelay: 0.5)
         }
@@ -37,6 +64,18 @@ class TransScene: SKScene {
     
     func loadHome() {
         let scene = GameScene(fileNamed: "Home")
+        scene!.scaleMode = scaleMode
+        view?.presentScene(scene)
+    }
+    
+    func loadInstruct() {
+        let scene = GameScene(fileNamed: "Instructions")
+        scene!.scaleMode = scaleMode
+        view?.presentScene(scene)
+    }
+    
+    func loadCredits() {
+        let scene = GameScene(fileNamed: "Credits")
         scene!.scaleMode = scaleMode
         view?.presentScene(scene)
     }

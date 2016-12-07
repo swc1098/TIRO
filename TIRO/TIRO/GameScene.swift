@@ -15,8 +15,6 @@ protocol EventListenerNode {
     func didMoveToScene()
 }
 
-
-
 struct PhysicsCategory {
     static let None: UInt32 = 0
     static let Ball: UInt32 = 0b1 // 1
@@ -53,7 +51,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             gameIsPaused ? pause() : unPause()
         }
     }
-    var CountdownText:SKLabelNode!
+    
+    var CountdownText: SKLabelNode!
     
     var timerNum: Int = 10
     var countDownTimer = Timer()
@@ -66,8 +65,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         //physicsBody!.categoryBitMask = PhysicsCategory.Edge
         physicsWorld.contactDelegate = self
         
-        self.countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameScene.updateTimer), userInfo: nil, repeats: true)
-        
         CountdownText = SKLabelNode(text: "\(timerNum)")
         CountdownText.fontSize = 100
         CountdownText.position.x = 0
@@ -77,8 +74,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         CountdownText.alpha = 0.5
         
         addChild(CountdownText)
-        
 
+        // counts down based on function
+        self.countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameScene.updateTimer), userInfo: nil, repeats: true)
+        
         exitNode = childNode(withName: "exit") as! ExitNode
         playerNode = childNode(withName:"mainball") as! PlayerNode
         jumpNode = childNode(withName:"jumppad") as? JumpNode
@@ -129,10 +128,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
             playable = false
             lose()
         } else if collision == 1 | 16{
-            print("FAIL")
-            run(SKAction.playSoundFileNamed("fail.wav", waitForCompletion: false))
-            playable = false
-            lose()
+            //print("FAIL")
+            //run(SKAction.playSoundFileNamed("fail.wav", waitForCompletion: false))
+            //playable = false
+            //lose()
         } else if collision == 1 | 64 {
             self.childNode(withName: "Key")?.removeFromParent()
             
@@ -180,6 +179,27 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         }
     }
     
+    @objc func updateTimer(node: SKLabelNode){
+        
+        if timerNum != 0 && gameIsPaused != true {
+            timerNum -= 1
+        }
+        
+        // loss handling creates an error
+        if self.timerNum < 0 {
+            self.countDownTimer.invalidate()
+            //self.lose()
+        }
+        else {
+            self.setLabel(num: "\(timerNum)")
+        }
+    }
+    
+    
+    func setLabel(num: String) {
+        CountdownText.text = num
+    }
+    
     func lose() {
         perform(#selector(GameScene.loseGame), with: nil, afterDelay: 0.5)
         //loseGame()
@@ -210,24 +230,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         view!.presentScene(scene)
     }
     
-    @objc func updateTimer(){
-        
-        if timerNum != 0 && gameIsPaused != true {
-            timerNum -= 1
-        }
-        
-        if self.timerNum <= 0 {
-            self.countDownTimer.invalidate()
-            self.lose()
-        }
-        else {
-            self.setLabel(num: "\(timerNum)")
-        }
-    }
-    
-    func setLabel(num: String) {
-        self.CountdownText.text = num
-    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(gameIsPaused){
