@@ -36,7 +36,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     var canUnPause = false
     
     static var currentlevel: Int = 0
-    static var Maxlevel: Int = 5
+    static var Maxlevel: Int = 6
     
     var firstUnPause = true
     
@@ -76,7 +76,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         addChild(CountdownText)
         
         //reset timer num
-        timerNum = 10
+        timerNum = 15
 
         // counts down based on function
         self.countDownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(GameScene.updateTimer), userInfo: nil, repeats: true)
