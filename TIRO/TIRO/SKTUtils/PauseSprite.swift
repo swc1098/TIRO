@@ -12,22 +12,41 @@ import SpriteKit
 class PauseSprite {
     
     var node:SKShapeNode
-    let pausedAlpha:CGFloat = 0.5
+    let pausedAlpha:CGFloat = 0.8
     
     init(){
         let rect = CGRect(x: -960, y: -540, width: 1920, height: 1080)
         node = SKShapeNode(rect: rect)
-        node.fillColor = SKColor.white
         node.alpha = pausedAlpha
         node.zPosition = 10000
         
         let PauseText:SKLabelNode = SKLabelNode(text: "Paused")
         PauseText.fontSize = 100
         PauseText.position.x = rect.midX
-        PauseText.position.y = rect.midY
+        PauseText.position.y = 400
         PauseText.fontName = "Hobo Std"
         
         node.addChild(PauseText)
+        
+        let playButton:SKSpriteNode = SKSpriteNode(imageNamed: "play")
+        playButton.position.x = 400
+        playButton.position.y = rect.midY
+        playButton.color = SKColor.black
+        playButton.colorBlendFactor = 1.0
+        playButton.blendMode = SKBlendMode.alpha
+        playButton.size = CGSize(width: 300, height: 300)
+        
+        node.addChild(playButton)
+        
+        let redoButton:SKSpriteNode = SKSpriteNode(imageNamed: "redo")
+        redoButton.position.x = -400
+        redoButton.position.y = rect.midY
+        redoButton.color = SKColor.black
+        redoButton.colorBlendFactor = 1.0
+        redoButton.blendMode = SKBlendMode.alpha
+        redoButton.size = CGSize(width: 300, height: 300)
+        
+        node.addChild(redoButton)
     }
     
     required init?(coder aDecoder: NSCoder) {

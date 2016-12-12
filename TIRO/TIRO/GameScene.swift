@@ -66,12 +66,12 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         CountdownText = SKLabelNode(text: "\(timerNum)")
-        CountdownText.fontSize = 100
+        CountdownText.fontSize = 150
         CountdownText.position.x = 0
         CountdownText.position.y = 350
         CountdownText.zPosition = 10000
         CountdownText.fontName = "Hobo Std"
-        CountdownText.alpha = 0.5
+        CountdownText.alpha = 0
         
         addChild(CountdownText)
         
@@ -151,6 +151,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     //MARK - Pause -
     func pause() {
+        pauseButton?.alpha = 0
         run(
             SKAction.sequence([SKAction.run {
                 self.pauseNode.paused()
@@ -169,6 +170,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         if(!canUnPause){
             return
         }
+        pauseButton?.alpha = 1.0
         pauseNode.unPaused()
         self.view?.isPaused = false
         physicsWorld.speed = 1.0
@@ -185,6 +187,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     @objc func updateTimer(node: SKLabelNode){
         
         if timerNum != 0 && gameIsPaused != true {
+            CountdownText.alpha = 0.6
             timerNum -= 1
         }
         
@@ -236,7 +239,11 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(gameIsPaused){
-            gameIsPaused = false
+            for touch: AnyObject in touches{
+                let location = touch.location(in:self)
+                // TODO:: ADD FUNCTIONALITY FOR BUTTONS IN PAUSE MENU
+                gameIsPaused = false
+            }
             return
         }
         
@@ -279,6 +286,10 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
                 loseGame()
             }
         
+        }
+        
+        if(gameIsPaused){
+            CountdownText.alpha = 0
         }
     }
 }
