@@ -70,7 +70,6 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
         CountdownText.position.x = 0
         CountdownText.position.y = 350
         CountdownText.zPosition = 10000
-        CountdownText.fontName = "Hobo Std"
         CountdownText.alpha = 0
         
         addChild(CountdownText)

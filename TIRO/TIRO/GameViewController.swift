@@ -19,7 +19,7 @@ class GameViewController: UIViewController {
             
             loadLevel()
             
-            
+            //UILabel.appearance().font = UIFont(name: "Hobo std", size: 400)
             setNotifcations()
             
             view.ignoresSiblingOrder = true
