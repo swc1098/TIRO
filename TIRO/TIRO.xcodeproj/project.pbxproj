@@ -54,6 +54,7 @@
 		3FD7C9611DF89E2A006106E2 /* lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FD7C9601DF89E2A006106E2 /* lock.png */; };
 		3FD7C9631DF8BB61006106E2 /* Instructions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FD7C9621DF8BB61006106E2 /* Instructions.sks */; };
 		3FD7C9651DF8BC3C006106E2 /* Credits.sks in Resources */ = {isa = PBXBuildFile; fileRef = 3FD7C9641DF8BC3C006106E2 /* Credits.sks */; };
+		3FE88AC21DFE217F00356267 /* wheel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE88AC11DFE217F00356267 /* wheel.png */; };
 		3FEB4EBF1DE50A2C0025DBCC /* Icon-App-60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4EBD1DE50A2C0025DBCC /* Icon-App-60x60@2x.png */; };
 		3FEB4EC01DE50A2C0025DBCC /* Icon-App-60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4EBE1DE50A2C0025DBCC /* Icon-App-60x60@3x.png */; };
 		3FEB4EC31DE50A630025DBCC /* Icon-App-29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FEB4EC11DE50A630025DBCC /* Icon-App-29x29@2x.png */; };
@@ -119,6 +120,7 @@
 		3FD7C9601DF89E2A006106E2 /* lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock.png; sourceTree = "<group>"; };
 		3FD7C9621DF8BB61006106E2 /* Instructions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Instructions.sks; sourceTree = "<group>"; };
 		3FD7C9641DF8BC3C006106E2 /* Credits.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Credits.sks; sourceTree = "<group>"; };
+		3FE88AC11DFE217F00356267 /* wheel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wheel.png; sourceTree = "<group>"; };
 		3FEB4EBD1DE50A2C0025DBCC /* Icon-App-60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@2x.png"; sourceTree = "<group>"; };
 		3FEB4EBE1DE50A2C0025DBCC /* Icon-App-60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-60x60@3x.png"; sourceTree = "<group>"; };
 		3FEB4EC11DE50A630025DBCC /* Icon-App-29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-App-29x29@2x.png"; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		3FA63A341DD390BF00BBEFE9 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3FE88AC11DFE217F00356267 /* wheel.png */,
 				3FD7C9601DF89E2A006106E2 /* lock.png */,
 				3FD7C95E1DF89DF4006106E2 /* key.png */,
 				3FEB4EC11DE50A630025DBCC /* Icon-App-29x29@2x.png */,
@@ -342,6 +345,7 @@
 				3F0897591DE5042B00F7F6F0 /* Level4.sks in Resources */,
 				3FEB4EBF1DE50A2C0025DBCC /* Icon-App-60x60@2x.png in Resources */,
 				3FA63A331DD390BA00BBEFE9 /* bg.png in Resources */,
+				3FE88AC21DFE217F00356267 /* wheel.png in Resources */,
 				3F126FA91DDCFA91000464DB /* Level2.sks in Resources */,
 				3F5E386E1DDD2D1B0086235C /* door.png in Resources */,
 				3F0D777E1DD3E2FA0041EF21 /* Win.sks in Resources */,
