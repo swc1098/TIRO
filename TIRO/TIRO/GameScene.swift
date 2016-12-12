@@ -54,7 +54,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     
     var CountdownText: SKLabelNode!
     
-    var timerNum: Int = 10
+    var timerNum: Int = 15
     var countDownTimer = Timer()
     
     //MARK - collision -
