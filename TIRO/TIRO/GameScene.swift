@@ -61,6 +61,7 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         
         firstUnPause = true
+        gameIsPaused = true
         self.physicsWorld.gravity = CGVector.zero
         //physicsBody!.categoryBitMask = PhysicsCategory.Edge
         physicsWorld.contactDelegate = self
@@ -242,9 +243,31 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if(gameIsPaused){
             for touch: AnyObject in touches{
-                let location = touch.location(in:self)
-                // TODO:: ADD FUNCTIONALITY FOR BUTTONS IN PAUSE MENU
+                let location = touch.location(in:self.pauseNode.node)
+                if pauseNode.node.childNode(withName: "redo")!.contains(location){
+                    self.view?.isPaused = false
+                    physicsWorld.speed = 1.0
+                    var scene = GameScene(fileNamed: "Level\(GameScene.currentlevel)")
+                    var reveal = SKTransition.reveal(with: .down, duration: 1)
+                    run(
+                    SKAction.sequence([SKAction.run {
+                        scene = GameScene(fileNamed: "Level\(GameScene.currentlevel)")
+                        reveal = SKTransition.reveal(with: .down, duration: 1)
+                        scene!.scaleMode = self.scaleMode
+                        
+                        }, SKAction.run {
+                          self.scene?.view?.presentScene(scene!, transition: reveal)
+                        }]))
+                    
+                    
+//                    unPause()
+//                    let scene = GameScene(fileNamed: "Level\(GameScene.currentlevel)")
+//                    let reveal = SKTransition.reveal(with: .down, duration: 1.5)
+//                    scene!.scaleMode = scaleMode
+//                    self.scene?.view?.presentScene(scene!, transition: reveal)
+                } else {
                 gameIsPaused = false
+                }
             }
             return
         }

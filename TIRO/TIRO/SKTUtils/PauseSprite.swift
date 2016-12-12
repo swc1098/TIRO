@@ -30,6 +30,7 @@ class PauseSprite {
         
         let playButton:SKSpriteNode = SKSpriteNode(imageNamed: "play")
         playButton.position.x = 400
+        playButton.name = "play"
         playButton.position.y = rect.midY
         playButton.color = SKColor.black
         playButton.colorBlendFactor = 1.0
@@ -40,6 +41,7 @@ class PauseSprite {
         
         let redoButton:SKSpriteNode = SKSpriteNode(imageNamed: "redo")
         redoButton.position.x = -400
+        redoButton.name = "redo"
         redoButton.position.y = rect.midY
         redoButton.color = SKColor.black
         redoButton.colorBlendFactor = 1.0
