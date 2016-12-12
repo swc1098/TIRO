@@ -58,25 +58,29 @@ class TransScene: SKScene {
     
     func loadLevel() {
         let scene = GameScene(fileNamed: "Level\(GameScene.currentlevel)")
+        let reveal = SKTransition.reveal(with: .down, duration: 1)
         scene!.scaleMode = scaleMode
-        view?.presentScene(scene)
+        view?.presentScene(scene!, transition: reveal)
     }
     
     func loadHome() {
         let scene = GameScene(fileNamed: "Home")
         scene!.scaleMode = scaleMode
-        view?.presentScene(scene)
+        let reveal = SKTransition.reveal(with: .right, duration: 1)
+        view?.presentScene(scene!, transition: reveal)
     }
     
     func loadInstruct() {
         let scene = GameScene(fileNamed: "Instructions")
         scene!.scaleMode = scaleMode
-        view?.presentScene(scene)
+        let reveal = SKTransition.reveal(with: .right, duration: 1)
+        view?.presentScene(scene!, transition: reveal)
     }
     
     func loadCredits() {
         let scene = GameScene(fileNamed: "Credits")
         scene!.scaleMode = scaleMode
-        view?.presentScene(scene)
+        let reveal = SKTransition.reveal(with: .right, duration: 1)
+        view?.presentScene(scene!, transition: reveal)
     }
 }

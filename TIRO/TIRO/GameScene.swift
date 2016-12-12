@@ -212,17 +212,19 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     func loseGame() {
         let scene = SKScene(fileNamed: "Lose")
         scene!.scaleMode = scaleMode
-        view?.presentScene(scene)
+        let reveal = SKTransition.reveal(with: .down, duration: 1)
+        view?.presentScene(scene!, transition: reveal)
     }
     
     func end() {
-        perform(#selector(GameScene.endGame), with: nil, afterDelay: 0.5)
+        perform(#selector(GameScene.endGame), with: nil, afterDelay: 0.1)
         //loseGame()
     }
     func endGame() {
         let scene = SKScene(fileNamed: "GameOver")
         scene!.scaleMode = scaleMode
-        view!.presentScene(scene)
+        let reveal = SKTransition.reveal(with: .right, duration: 1)
+        view?.presentScene(scene!, transition: reveal)
     }
     
     func win() {
@@ -232,7 +234,8 @@ class GameScene: SKScene,  SKPhysicsContactDelegate {
     func winGame() {
         let scene = SKScene(fileNamed: "Win")
         scene!.scaleMode = scaleMode
-        view!.presentScene(scene)
+        let reveal = SKTransition.reveal(with: .down, duration: 1)
+        view?.presentScene(scene!, transition: reveal)
     }
     
     
